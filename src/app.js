@@ -2,10 +2,10 @@ import angular from 'angular';
 import ComponentRouter from '@angular/router/angular1/angular_1_router';
 import UISelect from 'angular-ui-select/select.min';
 import ngSanitize from 'angular-sanitize';
-import Navbar from 'components/navbar/navbar';
+import Navbar from './components/navbar/navbar';
 import ServiceFactory from './app.utils';
 
-import '../style/app.scss';
+import './app.scss';
 import 'angular-ui-select/select.min.css';
 
 let AppComponent = {
