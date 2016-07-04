@@ -1,33 +1,27 @@
 import angular from 'angular';
-import ComponentRouter from '@angular/router/angular1/angular_1_router';
-import UISelect from 'angular-ui-select/select.min';
-import ngSanitize from 'angular-sanitize';
-import Navbar from './components/navbar/navbar';
+
+import 'angular-ui-router';
+import 'angular-ui-select/select.min';
+import 'angular-sanitize';
+
+import Components from './components';
+import Home from './home';
+
+import appComponent from './application.component';
 import ServiceFactory from './app.utils';
 
 import './app.scss';
 import 'angular-ui-select/select.min.css';
 
-let AppComponent = {
-  template: `
-        <div class="container-fluid">
-          <navbar></navbar>
-        </div>
-    `,
-  controller: () => new AppController()
-};
-
-class AppController { }
 
 angular
-  .module('synopsis', ['ngComponentRouter', 'ui.select', 'ngSanitize'])
+  .module('synopsis', ['ui.router', 'ui.select', 'ngSanitize', Components, Home])
   .config(($locationProvider) => $locationProvider.html5Mode(true))
-  .value('$routerRootComponent', 'app')
-  .component('app', AppComponent)
-  .component('navbar', Navbar);
+  .config(($urlRouterProvider) => $urlRouterProvider.otherwise('/home'))
+  .component('app', appComponent)
+  ;
 
 angular
   .element(document)
   .ready(() => angular.bootstrap(document, ['synopsis']));
 
-export default AppController;
