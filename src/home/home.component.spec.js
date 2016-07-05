@@ -15,7 +15,7 @@ describe('Home component', () => {
 		});
 	});
 
-	beforeEach(inject((_$componentController_, _$q_, _$rootScope_) => {
+	beforeEach(window.inject((_$componentController_, _$q_, _$rootScope_) => {
 		$componentController = _$componentController_;
 		$q = _$q_;
 		$rootScope = _$rootScope_;

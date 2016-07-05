@@ -5,7 +5,7 @@ describe('Navbar Component', () => {
   beforeEach(window.module('components.module')); 
 
   let $componentController;
-  beforeEach(inject((_$componentController_) => {
+  beforeEach(window.inject((_$componentController_) => {
     $componentController = _$componentController_;
   }));
 
