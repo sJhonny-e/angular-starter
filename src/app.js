@@ -9,7 +9,6 @@ import Home from './home';
 import appComponent from './application.component';
 
 import './app.scss';
-import 'angular-ui-select/select.min.css';
 
 
 angular
