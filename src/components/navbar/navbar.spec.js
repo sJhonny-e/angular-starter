@@ -1,29 +1,35 @@
-import NavBar from './navbar';
+import '../index';  // import the module under test
 
-describe('Navbar Component Tests', () => {
+describe('Navbar Component', () => {
 
-  let controller;
+  beforeEach(window.module('components.module')); 
 
-  beforeEach(() => {
-    controller = NavBar.controller();
+  let $componentController;
+  beforeEach(inject((_$componentController_) => {
+    $componentController = _$componentController_;
+  }));
+
+  it('has the Synopsis brand', () => {
+    let component = $componentController('navbar', null, {});
+    expect(component.brand).toEqual('Synopsis');
   });
 
-  it('should have the Synopsis brand', () => {
-    expect(controller.brand).toEqual('Synopsis');
+  it('has 3 menu items', () => {
+    let component = $componentController('navbar', null, {});
+    expect(component.items.length).toEqual(3);
   });
 
-  it('should have 3 menu items', () => {
-    expect(controller.items.length).toEqual(3);
-  });
 
-  it('should select the clicked item', () => {
+  describe('#onItemClicked', () => {
+    it('selects the clicked item', () => {
+      let component = $componentController('navbar', null, {});
 
-    var itemToClick = controller.items[2];
-    expect(itemToClick.isActive).toEqual(false);
+      var itemToClick = component.items[2];
+      expect(itemToClick.isActive).toBe(false);
 
-    controller.onItemClicked(itemToClick);
-    expect(itemToClick.isActive).toEqual(true);
-
+      component.onItemClicked(itemToClick);
+      expect(itemToClick.isActive).toBe(true);
+    });
   });
 
 });
