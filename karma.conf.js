@@ -5,7 +5,7 @@ module.exports = function karmaConfig(config) {
     ],
 
     reporters: [
-      'progress', 'coverage'
+      'coverage', 'spec'
     ],
 
     files: [
