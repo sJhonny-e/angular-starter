@@ -1,3 +1,18 @@
+My fork of @alamgird's angular-starter project.  
+
+**Things I've added / changed:**
+
+* Changed directory structure and components declarations to better align with Todd Motto's [style guide](https://github.com/toddmotto/angular-styleguide)
+* Switched to using [ui-router](https://github.com/angular-ui/ui-router)
+* Added a more advanced example of a component and service, with testing (see `home` component)
+* Using [ng-annotate](https://github.com/olov/ng-annotate/)
+* Added uglification and minification to production build
+* Added linting
+* Changed karma reporting to 'spec' style
+* Added ability to debug tests in firefox
+ 
+See below for the original project's list of features:  
+
 # Introduction
 
 * Heavily commented webpack configuration with reasonable defaults.
@@ -17,7 +32,7 @@
 
 ```bash
 # clone repo
-$ git clone https://github.com/alamgird/angular-starter.git my-app
+$ git clone https://github.com/sJhonny-e/extended-angular-starter.git my-app
 
 # change directory to your app
 $ cd my-app
@@ -75,3 +90,4 @@ It will start a local server using `webpack-dev-server` which will watch, build 
 
 * single run: `npm test`
 * live mode (TDD style): `npm run test-watch`
+* live mode in firefox (for debugging): `npm run test:firefox`
