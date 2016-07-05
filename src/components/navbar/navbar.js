@@ -1,5 +1,6 @@
 class NavBarController {
 
+  /*@ngInject*/
   constructor() {
 
     this.brand = 'Synopsis';

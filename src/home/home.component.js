@@ -1,4 +1,5 @@
 class HomeController {
+	/*@ngInject*/
 	constructor(ItemsService) {
 		this.itemsService = ItemsService;
 		this.items = [];
@@ -11,8 +12,6 @@ class HomeController {
 			// TODO: error handling	
 	}
 }
-
-HomeController.$inject = ['ItemsService'];
 
 const homeComponent = {
 	template: require('./home.html'),

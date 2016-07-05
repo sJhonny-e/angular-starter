@@ -1,4 +1,5 @@
 class ItemsService {
+	/*@ngInject*/
 	constructor($http, $q) {
 		this.$http = $http;
 		this.$q = $q;
