@@ -236,5 +236,11 @@ module.exports = function makeWebpackConfig() {
     stats: 'minimal'
   };
 
+  config.eslint = {
+        configFile: './.eslintrc',
+        failOnWarning: false,
+        failOnError: true
+  };
+
   return config;
 }();
