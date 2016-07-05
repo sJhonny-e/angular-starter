@@ -1,7 +1,6 @@
 import angular from 'angular';
 
 import 'angular-ui-router';
-import 'angular-ui-select/select.min';
 import 'angular-sanitize';
 
 import Components from './components';
@@ -14,7 +13,7 @@ import 'angular-ui-select/select.min.css';
 
 
 angular
-  .module('synopsis', ['ui.router', 'ui.select', 'ngSanitize', Components, Home])
+  .module('synopsis', ['ui.router', 'ngSanitize', Components, Home])
   .config(($locationProvider) => {
     "ngInject";   // ng-annotate doesn't handle arrow functions automatically; need to add the directive prologue.
     $locationProvider.html5Mode(true);
