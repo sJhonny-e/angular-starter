@@ -5,6 +5,7 @@ import 'angular-sanitize';
 
 import Components from './components';
 import Home from './home';
+import About from './about'
 
 import appComponent from './application.component';
 
@@ -12,7 +13,7 @@ import './app.scss';
 
 
 angular
-  .module('synopsis', ['ui.router', 'ngSanitize', Components, Home])
+  .module('synopsis', ['ui.router', 'ngSanitize', Components, Home, About])
   .config(($locationProvider) => {
     "ngInject";   // ng-annotate doesn't handle arrow functions automatically; need to add the directive prologue.
     $locationProvider.html5Mode(true);
@@ -27,4 +28,3 @@ angular
 angular
   .element(document)
   .ready(() => angular.bootstrap(document, ['synopsis']));
-
