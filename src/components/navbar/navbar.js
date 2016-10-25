@@ -6,26 +6,16 @@ class NavBarController {
     this.brand = 'Synopsis';
 
     this.items = [{
-      href: '#',
-      label: 'Home',
-      isActive: true
+      href: 'home',
+      label: 'Home'
+    }, {
+      href: 'about',
+      label: 'About'
     }, {
       href: '#',
-      label: 'About',
-      isActive: false
-    }, {
-      href: '#',
-      label: 'Contact',
-      isActive: false
+      label: 'Contact'
     }];
 
-  }
-
-  onItemClicked(clickedItem) {
-    this.items = this.items.map((item) => {
-      item.isActive = item.label === clickedItem.label;
-      return item;
-    });
   }
 }
 
