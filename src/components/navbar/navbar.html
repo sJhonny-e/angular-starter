@@ -11,8 +11,8 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li ng-repeat="item in $ctrl.items" ng-class="{ active: item.isActive }">
-                    <a ng-click="$ctrl.onItemClicked(item)" ng-href="{{ item.href }}">{{ item.label }}</a>
+                <li ng-repeat="item in $ctrl.items" ui-sref-active="active">
+                    <a ui-sref="{{ item.href }}">{{ item.label }}</a>
                 </li>
             </ul>
 
